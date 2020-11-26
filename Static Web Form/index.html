@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang = "en">
+<meta charset = "UTF-8">
+<link rel = "icon" type="image/png" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/clipboard_1f4cb.png"/>
+
+<head>
+   <!CSS stylesheet>
+    <style>
+        body 
+        {
+            background-color: #efe2ba;
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        .sansserif {}
+
+        .sansserif, input
+        {
+            font-family: "Avenir Next" , "Source Sans Pro", sans-serif;	
+        }
+
+        .Mont
+        {
+            font-family: Mont;
+        }
+
+        input[type=text], select, textarea 
+        {
+            font-family: "Avenir Next" , "Source Sans Pro", sans-serif;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label 
+        {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=reset] 
+        {
+            background-color: #fc4445;
+            color: white;
+            padding: 12px 20px;
+            margin: 4px 2px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=reset]:hover 
+        {
+            background-color: #ac3b61;
+            transition-duration: 150ms;
+            transition-property: background-color;
+            transition-timing-function: ease-in;
+        }
+
+        .button
+        {
+            font-family: "Avenir Next" , "Source Sans Pro", sans-serif;
+            background-color: #379683;
+            color: white;
+            padding: 12px 20px;
+            margin: 4px 2px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            transition-duration: 150ms;
+            transition-property: background-color;
+            transition-timing-function: ease-in;
+        }
+
+        .button:hover
+        {
+            background-color: #116466;
+        }
+        
+        .negativeWords
+        {
+            font-family: "Avenir Next" , "Source Sans Pro", sans-serif;
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+            margin: 4px 2px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            transition-duration: 150ms;
+            transition-property: background-color;
+            transition-timing-function: ease-in;
+        }
+        
+        .negativeWords:hover
+        {
+            background-color: #FF0000;
+        }
+
+        .mainLoginInput::placeholder 
+        { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            font-family: "Avenir Next" , "Source Sans Pro", sans-serif;
+            opacity: 1; /* Firefox */
+        }
+
+        .mainLoginInput:-ms-input-placeholder 
+        { /* Internet Explorer 10-11 */
+            font-family: "Avenir Next" , "Source Sans Pro", sans-serif;
+        }
+
+        .mainLoginInput::-ms-input-placeholder 
+        { /* Microsoft Edge */
+            font-family: "Avenir Next" , "Source Sans Pro", sans-serif;
+        }
+
+        .title
+        {
+            margin: auto;
+            color: white;
+            width: 25%;
+            display: block;
+            border-radius: 20px;
+            background-color: #d79922;
+            padding: 5px;
+            line-height: 0.7;
+        }
+        
+        .header
+        {
+            font-family: "Avenir Next";
+            color: white;
+            width: 100%;
+            display: block;
+            background-color: #0d2644;
+            padding: 10px;
+        }
+
+        .container 
+        {
+            margin: auto;
+            width: 50%;
+            display: block;
+            border-radius: 20px;
+            background-color: #c5cbe3;
+            padding: 20px;
+        }
+
+        .author
+        {
+            margin: auto;
+            color: white;
+            width: 33%;
+            display: block;
+            border-radius: 15px;
+            background-color: #e27d60;
+            padding: 1px;
+            line-height: 0.1;
+        }
+        
+        .powered
+        {
+            margin: auto;
+            color: white;
+            width: 16%;
+            display: block;
+            border-radius: 15px;
+            background-color: #434244;
+            padding: 0.1px;
+            line-height: 0.1;
+        }
+        
+        .col-25 
+        {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 
+        {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        .row:after 
+        {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        @media screen and (max-width: 900px) 
+        {
+            .col-25, .col-75, input[type=submit], input[type=reset] , .button{
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+        @media screen and (max-width: 900px)
+        {
+            .title, .container, .author, .powered
+            {
+                width: 90%;
+                margin-top: 0;
+            }
+        }
+    </style>
+    <title>Static Web Form</title>
+</head>
+
+<body>
+<!HTML skeleton>
+<br>
+<div class = "title">
+    <center>
+        <h1 class = "sansserif"><b>&#128203 Static Web Form</b></h1>
+        <h5 class = "sansserif">&#128214 Midterm Exam | &#128187 MII4505 Web Programming</h5>
+    </center>
+</div>
+<br>
+<div class = "container">
+    <form id = "form1" action="formProcess.php">
+        <div class = "row">
+           <center>
+               <h2 class = "sansserif">&#128221 Form</h2>
+           </center>
+            <div class = "col-25">
+                <label for = "fullname" class = "sansserif">&#129489 Name</label>
+            </div>
+            <div class = "col-75">
+                <input type = "text" id = "fullname" name = "fullname" placeholder = "name" class = "mainLoginInput" required>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-25">
+                <label for = "email" class = "sansserif">&#128231 E-mail</label>
+            </div>
+            <div class = "col-75">
+                <input type = "text" id = "email" name = "email" placeholder = "name@email.domain" class = "mainLoginInput" required>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-25">
+                <label for = "majors" class = "sansserif">&#128218 Major</label>
+            </div>
+            <div class = "col-75">
+                <select name = "majors" id = "majors" class = "sansserif">
+                    <optgroup label = "Department of Computer Science and Electronics">
+                        <option value = "&#128187 Computer Science">&#128187 Computer Science</option>
+                        <option value = "&#129470 Electronics and Instrumentation">&#129470 Electronics and Instrumentation</option>
+                    </optgroup>
+                    <optgroup label = "Department of Mathematics">
+                        <option value = "&#129518 Mathematics">&#129518 Mathematics</option>
+                        <option value = "&#128202 Statistics">&#128202 Statistics</option>
+                        <option value = "&#128176 Actuarial Science">&#128176 Actuarial Science</option>
+                    </optgroup>
+                    <optgroup label = "Department of Physics">
+                        <option value = "&#127776 Physics">&#127776 Physics</option>
+                        <option value = "&#127755 Geophysics">&#127755 Geophysics</option>
+                    </optgroup>
+                    <optgroup label = "Department of Chemistry">
+                        <option value = "Chemistry">&#129514 Chemistry</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-25">
+                <label for = "comment" class = "sansserif">&#128172 Comments</label>
+            </div>
+            <div class = "col-75">
+                <textarea id = "comment" name = "comment" placeholder = "I like avocados!" style="height:200px" class = "mainLoginInput"></textarea>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "sansserif">
+                <button type = "button" onclick = "validateForm()" class = "button">&#9989 Process</button>
+                <input type = "reset" onclick = "hideDiv()" value = "&#10060 Reset">
+                <a href="https://s3.amazonaws.com/static-web.webprogramming/negativeWords.html" style="text-decoration:none" target="_blank" class="negativeWords">&#128545 Negative words</a>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+<div id = "welcomeDiv" class = "container" style = "display:none">
+    <center>
+        <h2 class = "sansserif">&#129534 Result</h2>
+    </center>
+    <p id = "hiResult" class = "sansserif"></p>
+    <p id = "emailResult" class = "sansserif"></p>
+    <p id = "wordCount" class = "sansserif"></p>
+    <p id = "negativeWords" class = "sansserif"></p>
+    <center>
+        <h2 id = "warning" class = "sansserif"></h2>
+    </center>
+</div>
+<br>
+<div class = "author">
+    <center>
+        <h5 class = "sansserif">&#128296 with &#128151 by &#129302 Pandya Athallah Erlambang | &#127380 19/444314/PA/19376</h5>
+    </center>
+</div>
+<br>
+<div class = "powered">
+    <center>
+        <h5 class = "sansserif">&#9889 by HTML, CSS, and JavaScript</h5>
+    </center>
+</div>
+
+<script>
+    // JavaScript for data processing and validation
+    function uniqueArray(value, index, self)
+    {
+        return self.indexOf(value) === index;
+    }
+
+    function wordFilter(array)
+    {
+        var negativeWordsLib = ["4r5e", "5h1t", "5hit", "a55", "anal", "anus", "ar5e", "arrse", "arse", "ass", "ass-fucker", "asses", "assfucker", "assfukka", "asshole", "assholes", "asswhole", "a_s_s", "b!tch", "b00bs", "b17ch", "b1tch", "ballbag", "balls", "ballsack", "bastard", "beastial", "beastiality", "bellend", "bestial", "bestiality", "bi+ch", "biatch", "bitch", "bitcher", "bitchers", "bitches", "bitchin", "bitching", "bloody", "blow job", "blowjob", "blowjobs", "boiolas", "bollock", "bollok", "boner", "boob", "boobs", "booobs", "boooobs", "booooobs", "booooooobs", "breasts", "buceta", "bugger", "bum", "bunny fucker", "butt", "butthole", "buttmuch", "buttplug", "c0ck", "c0cksucker", "carpet muncher", "cawk", "chink", "cipa", "cl1t", "clit", "clitoris", "clits", "cnut", "cock", "cock-sucker", "cockface", "cockhead", "cockmunch", "cockmuncher", "cocks", "cocksuck", "cocksucked", "cocksucker", "cocksucking", "cocksucks", "cocksuka", "cocksukka", "cok", "cokmuncher", "coksucka", "coon", "cox", "crap", "cum", "cummer", "cumming", "cums", "cumshot", "cunilingus", "cunillingus", "cunnilingus", "cunt", "cuntlick", "cuntlicker", "cuntlicking", "cunts", "cyalis", "cyberfuc", "cyberfuck", "cyberfucked", "cyberfucker", "cyberfuckers", "cyberfucking", "d1ck", "damn", "dick", "dickhead", "dildo", "dildos", "dink", "dinks", "dirsa", "dlck", "dog-fucker", "doggin", "dogging", "donkeyribber", "doosh", "duche", "dyke", "ejaculate", "ejaculated", "ejaculates", "ejaculating", "ejaculatings", "ejaculation", "ejakulate", "f u c k", "f u c k e r", "f4nny", "fag", "fagging", "faggitt", "faggot", "faggs", "fagot", "fagots", "fags", "fanny", "fannyflaps", "fannyfucker", "fanyy", "fatass", "fcuk", "fcuker", "fcuking", "feck", "fecker", "felching", "fellate", "fellatio", "fingerfuck", "fingerfucked", "fingerfucker", "fingerfuckers", "fingerfucking", "fingerfucks", "fistfuck", "fistfucked", "fistfucker", "fistfuckers", "fistfucking", "fistfuckings", "fistfucks", "flange", "fook", "fooker", "fuck", "fucka", "fucked", "fucker", "fuckers", "fuckhead", "fuckheads", "fuckin", "fucking", "fuckings", "fuckingshitmotherfucker", "fuckme", "fucks", "fuckwhit", "fuckwit", "fudge packer", "fudgepacker", "fuk", "fuker", "fukker", "fukkin", "fuks", "fukwhit", "fukwit", "fux", "fux0r", "f_u_c_k", "gangbang", "gangbanged", "gangbangs", "gaylord", "gaysex", "goatse", "God", "god-dam", "god-damned", "goddamn", "goddamned", "hardcoresex", "hell", "heshe", "hoar", "hoare", "hoer", "homo", "hore", "horniest", "horny", "hotsex", "jack-off", "jackoff", "jap", "jerk-off", "jism", "jiz", "jizm", "jizz", "kawk", "knob", "knobead", "knobed", "knobend", "knobhead", "knobjocky", "knobjokey", "kock", "kondum", "kondums", "kum", "kummer", "kumming", "kums", "kunilingus", "l3i+ch", "l3itch", "labia", "lust", "lusting", "m0f0", "m0fo", "m45terbate", "ma5terb8", "ma5terbate", "masochist", "master-bate", "masterb8", "masterbat*", "masterbat3", "masterbate", "masterbation", "masterbations", "masturbate", "mo-fo", "mof0", "mofo", "mothafuck", "mothafucka", "mothafuckas", "mothafuckaz", "mothafucked", "mothafucker", "mothafuckers", "mothafuckin", "mothafucking", "mothafuckings", "mothafucks", "mother fucker", "motherfuck", "motherfucked", "motherfucker", "motherfuckers", "motherfuckin", "motherfucking", "motherfuckings", "motherfuckka", "motherfucks", "muff", "mutha", "muthafecker", "muthafuckker", "muther", "mutherfucker", "n1gga", "n1gger", "nazi", "nigg3r", "nigg4h", "nigga", "niggah", "niggas", "niggaz", "nigger", "niggers", "nob", "nob jokey", "nobhead", "nobjocky", "nobjokey", "numbnuts", "nutsack", "orgasim", "orgasims", "orgasm", "orgasms", "p0rn", "pawn", "pecker", "penis", "penisfucker", "phonesex", "phuck", "phuk", "phuked", "phuking", "phukked", "phukking", "phuks", "phuq", "pigfucker", "pimpis", "piss", "pissed", "pisser", "pissers", "pisses", "pissflaps", "pissin", "pissing", "pissoff", "poop", "porn", "porno", "pornography", "pornos", "prick", "pricks", "pron", "pube", "pusse", "pussi", "pussies", "pussy", "pussys", "rectum", "retard", "rimjaw", "rimming", "s hit", "s.o.b.", "sadist", "schlong", "screwing", "scroat", "scrote", "scrotum", "semen", "sex", "sh!+", "sh!t", "sh1t", "shag", "shagger", "shaggin", "shagging", "shemale", "shi+", "shit", "shitdick", "shite", "shited", "shitey", "shitfuck", "shitfull", "shithead", "shiting", "shitings", "shits", "shitted", "shitter", "shitters", "shitting", "shittings", "shitty", "skank", "slut", "sluts", "smegma", "smut", "snatch", "son-of-a-bitch", "spac", "spunk", "s_h_i_t", "t1tt1e5", "t1tties", "teets", "teez", "testical", "testicle", "tit", "titfuck", "tits", "titt", "tittie5", "tittiefucker", "titties", "tittyfuck", "tittywank", "titwank", "tosser", "turd", "tw4t", "twat", "twathead", "twatty", "twunt", "twunter", "v14gra", "v1gra", "vagina", "viagra", "vulva", "w00se", "wang", "wank", "wanker", "wanky", "whoar", "whore", "willies", "willy", "xrated", "xxx"];
+        var filteredWords =[];
+        var x = 0;
+        var warning = "Would you kindly change or delete those words? &#128519"
+        for (i = 0; i < array.length; i++)
+        {
+            for (j = 0; j < negativeWordsLib.length; j++)
+            {
+                if (array[i] == negativeWordsLib[j])
+                {
+                    filteredWords[x] = array[i];
+                    x++;
+                }
+            }
+        }
+        var wordsCheck = filteredWords.filter(uniqueArray);
+        var text = "<ul>";
+	    for (i = 0; i < wordsCheck.length; i++) 
+        {
+		    text += "<li>" + wordsCheck[i] + "</li>";
+	    }
+	    text += "</ul>";
+        if (x>0){
+            document.getElementById("negativeWords").innerHTML = "&#128591 Sorry, you are not allowed to use these following explicit words: " + text;
+            document.getElementById("warning").innerHTML = warning;
+        }
+    }
+
+    function formProcess()
+    {
+        document.getElementById("negativeWords").innerHTML = "";
+        document.getElementById("warning").innerHTML = "";
+        var x = document.getElementById("form1");
+        var text = "";
+        var name = "";
+        var email ="";
+        var major = "";
+        var i;
+        for (i = 0; i < x.length-1 ;i++) 
+        {
+            if (i==0){
+                name += x.elements[i].value;
+            } else if (i==1){
+                email += x.elements[i].value;
+            } else if (i==2){
+                major += x.elements[i].value;
+            }else{
+                text += x.elements[i].value;
+            }
+        }
+        var emailArray = email.split("@");
+        var commentWords = text.split(/(?:,| )+/);
+        var totalWord;
+        if (text=="")
+        {
+            totalWord = 0;
+        }
+        else 
+        {
+            totalWord = commentWords.length;
+        }
+        var commentCheck = text.toLowerCase().split(/[ ,.]+/);
+        
+        document.getElementById("hiResult").innerHTML = "&#128075 Hello there, " + name.bold() + " from " + major.bold() + "!\n";
+        document.getElementById("emailResult").innerHTML = "&#128140 Your e-mail address is " + emailArray[0].bold() + " at " + emailArray[1].bold() + ".\n";
+        document.getElementById("wordCount").innerHTML = "&#128290 Your comments word count are " + totalWord.toString().bold() + " word(s).";
+        wordFilter(commentCheck);
+    }
+    
+    function showDiv() 
+    {
+        document.getElementById('welcomeDiv').style.display = "block";
+    }
+
+    function hideDiv()
+    {
+        document.getElementById('welcomeDiv').style.display = "none";
+        document.getElementById("negativeWords").innerHTML = "";
+    }
+
+    function validateForm() 
+    {
+        var x = document.forms["form1"]["fullname"].value;
+        if (x == "") 
+        {
+            hideDiv();
+            alert("Please fill in your name!");
+            return false;
+        }
+        var x = document.forms["form1"]["email"].value;
+        if (x == "") 
+        {
+            hideDiv();
+            alert("Please fill in your e-mail!");
+            return false;
+        }
+        const invalid = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var x = document.forms["form1"]["email"].value;
+        var y = invalid.test(x);
+        if (y == false) 
+        {
+		      alert ("Invalid e-mail! format: name@email.domain");
+		      return false;
+	    }
+        window.scrollTo(0, 500);
+        formProcess();
+        showDiv();
+    }
+</script>
+
+</body>
+</html>
